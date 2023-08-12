@@ -17,9 +17,6 @@ export default {
       name: "category",
       type: "string",
       title: "Category",
-      initialValue: {
-        title: "Male",
-      },
       options: {
         list: [
           { title: "Male", value: "male" },
