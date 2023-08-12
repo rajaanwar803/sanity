@@ -9,9 +9,9 @@ const client = createClient({
 });
 
 export default async function Home() {
-  const products = await client.fetch(`*[_type == 'pet'] {
-    name,
-    "manuscriptURL": manuscript.asset->url
+  const products = await client.fetch(`*[_type == 'products'] {
+    name, price, category,
+    "picURL": picture.asset->url
   }
   `);
   console.log(products);
@@ -21,13 +21,9 @@ export default async function Home() {
       {products?.map((product: any) => (
         <div key={product._id}>
           <p>{product.name}</p>
-          {product.manuscriptURL ? (
-            <Image
-              src={product.manuscriptURL}
-              width={500}
-              height={500}
-              alt="pic"
-            />
+          <p>{product.price}</p>
+          {product.picURL ? (
+            <Image src={product.picURL} width={500} height={500} alt="pic" />
           ) : (
             <></>
           )}

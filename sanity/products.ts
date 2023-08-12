@@ -27,7 +27,7 @@ export default {
     },
     {
       name: "picture",
-      type: "string",
+      type: "image",
       title: "Picture",
     },
     {
